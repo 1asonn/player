@@ -1,5 +1,5 @@
 import React from 'react'
-import TopNav from '../../components/top-Nav'
+import Header from '../../components/header'
 import styles from './index.module.scss'
 
 const PortalPage = () => {
@@ -25,7 +25,7 @@ const PortalPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <TopNav
+                <Header
                     LeftRegion={leftRegion}
                     MiddleRegion={middleRegion}
                     RightRegion={rightRegion}

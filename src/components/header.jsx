@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.module.scss'
 
-const TopNav = ({LeftRegion,MiddleRegion,RightRegion}) => {
+const Header = ({LeftRegion,MiddleRegion,RightRegion}) => {
     return (
         <div className={styles.container}>
             <div className={styles.leftRegion}><LeftRegion/></div>
@@ -12,4 +12,4 @@ const TopNav = ({LeftRegion,MiddleRegion,RightRegion}) => {
 }
 
 
-export default TopNav
+export default Header
