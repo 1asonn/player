@@ -1,9 +1,15 @@
 import React from 'react'
 import Header from '../../components/header'
 import styles from './index.module.scss'
+import Banner from '../../components/banner'
 
 const PortalPage = () => {
 
+    const bannerImages = [
+        './images/test.png',
+        './images/logo192.png',
+        './images/music.jpg',
+    ]
     const leftRegion = () =>{
         return (
             <div className={styles.logoContainer}>
@@ -31,8 +37,8 @@ const PortalPage = () => {
                     RightRegion={rightRegion}
                 />
             </div>
-            <section>
-                
+            <section className={styles.bannerSection}>
+                <Banner images={bannerImages} animationDuration={1000}/>
             </section>
         </div>
     )
