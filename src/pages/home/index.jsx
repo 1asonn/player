@@ -1,17 +1,24 @@
 import useToggle from "../../utils/hooks/useToggle"
-const HomePage = () => {
-    const [state,{toggle}] = useToggle(true)
+import React,{ useState } from "react"
+import useBoolean from "../../utils/hooks/useBoolean"
 
-    const handleToggle = () => {
-        toggle()
-    }
+const HomePage = () => {
+    const [state, actions] = useBoolean();
+    
     return (
-        <>
-            <button onClick={handleToggle}>Toggle</button>
-            <span>{state.toString()}</span>
-        </>
-    )
-}
+      <>
+      <StaticWrapper
+        actions={actions}
+      />
+      <span>{state.toString()}</span>
+      </>
+    );
+  }
+  
+  const StaticWrapper = React.memo(({ actions }) => {
+    console.log('Wrapper rendered');
+    return <button onClick={actions.toggle}>Toggle</button>;
+  });
 
 
 export default HomePage
