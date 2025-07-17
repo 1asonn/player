@@ -1,29 +1,46 @@
+
 {
-    "actualAmount": 0.01,
-    "amount": 0.01,
-    "discountAmount": 0,
-    "equipmentCode": "A0000125",
-    "goodsList": [
-        {
-            "commodityName": "0.01CNY1Coin",
-            "commodityPrice": 0.01,
-            "number": 1,
-            "taxAmount": 0,
-            "taxRate": 0.02,
-            "totalAmount": 0.01
-        }
-    ],
-    "gstNo": "AAAAAAA",
-    "merchantName": "Merchant",
-    "orderId": "1394365021831569408",
-    "orderNo": "P20250714090847254A0000125",
-    "payMethod": 1,
-    "payTime": "2025-07-14 09:08:56",
-    "receivableAmount": 0.01,
-    "storeAddress": null,
-    "storeName": "纸钞机直连 Android 测试",
-    "symbol": "¥",
-    "taxRate": 0.02,
-    "timezone": "Asia/Shanghai",
-    "totalTaxAmount": 0
+    "storeInfo":{
+        "storeName":"门店名称：蒙古场地",
+        "storeAddress":"门店地址：蒙古场地",
+        "gstNo":"GST号：AAAAAAA"
+    },
+
+    "orderInfo":{
+        "orderNo":"交易编号：1385288548374937600", 
+        "payTime":"交易时间：2025-06-19 16:02:22",
+        "equipmentCode":"设备编码：95249523"
+    },
+
+    "goodsInfo":{
+        "merchBill": "商品清单",
+        "productDes": "商品描述",
+        "numberPrice": "数量x价格",
+        "goodsList":[
+            {
+                "commodityName": "0.01CNY1Coin",
+                "commodityPrice": 0.01,
+                "number": 1,
+                "taxAmount": "税额：0",
+                "taxRate": "税率：0.02",
+                "totalAmount": "基本价格：0.01"
+            }
+        ]
+    },
+
+    "summary":{
+        "receivableAmount":"小计(按基本价)：100",
+        "discountAmount":"折扣：0"
+    },
+
+    "taxInfo":{
+        "receivableAmount":"应税金额：100",
+        "totalTaxAmount":"税额(2.00%)：2",
+        "totalAmount":"合计(含税)：100"
+    },
+
+    "paymentInfo":{
+        "payMethod":"支付方式：pos支付",
+        "actualAmount":"实收金额：100"         
+    }
 }

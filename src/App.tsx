@@ -3,10 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import PortalPage from './pages/portal';
 import HomePage from './pages/home';
+import LoginPage from './pages/login';
 
 function App() {
   return (
-    <HomePage />
+    <LoginPage />
   );
 }
 
