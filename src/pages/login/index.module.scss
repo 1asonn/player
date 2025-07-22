@@ -98,7 +98,7 @@
     width:100%;
     height:100%;
     overflow: hidden;
-    
+    pointer-events: none;
     .togglePanel{
         width:50%;
         height:100%;
@@ -113,6 +113,7 @@
         z-index: 2;
         color:#fff;
         font-size:16px;
+        pointer-events: visible;
         }
     .left{
         left:0;
