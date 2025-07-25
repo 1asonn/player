@@ -91,38 +91,58 @@
     cursor: pointer;
 }
 
+.registerBtn{
+    background-color:transparent;
+    color:white;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.loginBtn{
+    background-color:transparent;
+    color:white;
+    border: 1px solid white;
+    margin-bottom: 20px;
+}
+
 
 // 滑动轨道
 .toggleBox{
-    position:absolute;
+    position:relative;
     width:100%;
     height:100%;
     overflow: hidden;
     pointer-events: none;
-    .togglePanel{
-        width:50%;
-        height:100%;
-        position:absolute;
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        align-items:center;
-        text-align:center;
-        padding:40px;
-        transition:0.6s ease-in-out;
-        z-index: 2;
-        color:#fff;
-        font-size:16px;
-        pointer-events: visible;
-        }
-    .left{
-        left:0;
-        transition-delay: 1.2s;
+}
+.togglePanel{
+    width:50%;
+    height:100%;
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    transition:0.6s ease-in-out;
+    z-index: 2;
+    color:#fff;
+    font-size:16px;
+    pointer-events: visible;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 30%;
     }
-    .right{
-        right:-50%;
-        transition-delay: 0.6s;
-    }
+}
+.left{
+    left:0;
+    transition-delay: 1.2s;
+}
+.right{
+    right:-50%;
+    transition-delay: 0.6s;
 }
 
 .toggleBox::before {
@@ -159,6 +179,41 @@
 }
 .container[class*='active'] .RegisterFormBox{
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: calc(100vh - 40px);
+    }
+
+    .toggleBox::before{
+        left:0;
+        width:100%;
+        top:-270%;
+        height: 300%;
+        border-radius: 20vw;
+    }
+
+    .LoginFormBox{
+        bottom: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+    .RegisterFormBox{
+        bottom: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+
+    .togglePanel.left{
+        top:0;
+    }
+
+    .togglePanel.right{
+        bottom:-30%;
+    }
 }
 
 

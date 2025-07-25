@@ -7,8 +7,14 @@ import 'boxicons/css/boxicons.min.css'
 
 const LoginPage = () => {
     // const {login} = useLogin()
+
     const containerRef = useRef(null)
 
+
+    const handleLogin = (e)=> {
+        e.preventDefault()
+        console.log("登录")
+    }
 
     const ToRegisterForm = ()=> {
         if(containerRef.current){
@@ -36,7 +42,7 @@ const LoginPage = () => {
                 {/* 登录表单 */}
                 <div className={styles.LoginFormBox}>
                 <h1>Login</h1>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={handleLogin}>
                     <div className={styles.inputBox}>
                         <input type="text" placeholder="Username" />
                         <i class="bx bxs-user"></i>
@@ -45,7 +51,7 @@ const LoginPage = () => {
                         <input type="password" placeholder="Password" />
                         <i class="bx bxs-lock-alt"></i>
                     </div>
-                    <button className={styles.btn} type="submit">Login</button>
+                    <button type="submit" className={styles.btn}>Login</button>
                 </form>
                 </div>
 
@@ -85,3 +91,6 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+
+
+
