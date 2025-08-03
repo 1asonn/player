@@ -1,0 +1,109 @@
+.language-demo {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+.demo-header {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+
+    .header-title {
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .header-subtitle {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1rem;
+      margin: 6px 0 0 0;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+  }
+}
+
+.demo-main {
+  padding: 48px 0;
+
+  .demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+}
+
+.demo-section {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  }
+
+  .section-content {
+    width: 100%;
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .demo-header {
+    padding: 24px 0;
+
+    .header-content {
+      padding: 0 16px;
+
+      .header-title {
+        font-size: 1.8rem;
+      }
+
+      .header-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .demo-main {
+    padding: 32px 0;
+
+    .demo-container {
+      padding: 0 16px;
+    }
+  }
+
+  .demo-section {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-header {
+    .header-content {
+      .header-title {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .demo-section {
+    padding: 20px 16px;
+  }
+}
