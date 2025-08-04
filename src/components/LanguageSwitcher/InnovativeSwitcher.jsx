@@ -299,12 +299,6 @@ const InnovativeSwitcher = ({ onLanguageChange, currentLanguage = 'en' }) => {
             {/* 弹窗底部 */}
             <div className={styles['modal-footer']}>
               <div className={styles['modal-tips']}>
-                <span className={styles['tip-item']}>
-                  <kbd>Ctrl</kbd> + <kbd>L</kbd> 打开选择器
-                </span>
-                <span className={styles['tip-item']}>
-                  <kbd>ESC</kbd> 关闭弹窗
-                </span>
               </div>
             </div>
           </div>

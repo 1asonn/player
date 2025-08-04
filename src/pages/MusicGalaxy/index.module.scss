@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: radial-gradient(circle at 50% 50%, #0a0a23 0%, #000011 50%, #000000 100%);
+}
+
+// Three.js 星空背景
+.starBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+// Matter.js 物理交互层
+.physicsLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+// 标题区域
+.titleSection {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  color: white;
+  animation: titleFadeIn 2s ease-out;
+}
+
+.mainTitle {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleGlow {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b9d, #c44569, #f8b500, #4ecdc4);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite alternate,
+             textGlow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
+}
+
+.titleSub {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.9;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-top: 20px;
+  opacity: 0.8;
+  color: #b8b8ff;
+  animation: subtitleFade 3s ease-out 1s both;
+}
+
+// 交互提示
+.instructions {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 10;
+  animation: instructionsFadeIn 2s ease-out 2s both;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+.instructionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  animation: bounce 2s ease-in-out infinite;
+  
+  &:nth-child(1) { animation-delay: 0s; }
+  &:nth-child(2) { animation-delay: 0.3s; }
+  &:nth-child(3) { animation-delay: 0.6s; }
+}
+
+// 模态窗口
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modalContent {
+  background: linear-gradient(135deg, rgba(26, 35, 64, 0.95), rgba(17, 24, 39, 0.95));
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: modalSlideIn 0.4s ease-out;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.singerInfo {
+  text-align: center;
+  color: white;
+}
+
+.singerAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  animation: avatarGlow 2s ease-in-out infinite alternate;
+}
+
+.singerInitial {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.singerName {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  background: linear-gradient(135deg, #fff, #b8b8ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.singerGenre {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+  color: #4ecdc4;
+  font-weight: 500;
+}
+
+.singerDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.representative {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 4px solid #4ecdc4;
+  
+  h4 {
+    margin: 0 0 10px;
+    color: #4ecdc4;
+    font-weight: 600;
+  }
+  
+  p {
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+}
+
+.exploreBtn {
+  background: linear-gradient(135deg, #ff6b9d, #4ecdc4);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 107, 157, 0.4);
+  }
+}
+
+// 浮动音符装饰
+.floatingNotes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.note {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  animation: floatUp 8s ease-in-out infinite;
+  
+  &:nth-child(even) {
+    animation-direction: reverse;
+  }
+}
+
+// 音波扩散效果
+.ripple {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 107, 157, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 20;
+}
+
+// 动画关键帧
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 30px rgba(255, 107, 157, 0.5); }
+  100% { text-shadow: 0 0 50px rgba(255, 107, 157, 0.8), 0 0 80px rgba(78, 205, 196, 0.3); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes subtitleFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+@keyframes instructionsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes avatarGlow {
+  0% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.2); }
+  100% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.4), 0 0 80px rgba(78, 205, 196, 0.2); }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .titleSection {
+    top: 15%;
+    padding: 0 20px;
+  }
+  
+  .modalContent {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .singerAvatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .singerInitial {
+    font-size: 2rem;
+  }
+  
+  .singerName {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructions {
+    bottom: 10%;
+    gap: 15px;
+  }
+  
+  .instructionItem {
+    font-size: 0.9rem;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+} 

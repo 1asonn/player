@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import LanguageDemo from './pages/LanguageDemo';
+import MusicGalaxy from './pages/MusicGalaxy';
 
 function App() {
   return (
-    <LanguageDemo />
+    <MusicGalaxy />
   );
 }
 
