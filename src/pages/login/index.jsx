@@ -70,8 +70,8 @@ const LoginPage = () => {
                     </form>
                 </div> 
 
-                {/* 动画模组 */}
-                <div className={styles.toggleBox}>
+                {/* 动画模组 （幕布动画）*/} 
+                <div className={styles.toggleBox}> 
                     {/* 登录 */}
                     <div className={`${styles.togglePanel} ${styles.left}`}>
                         <h1>Welcome Back!</h1>

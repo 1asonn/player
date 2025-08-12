@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Header from '../../components/header'
-import styles from './index.module.scss'
+import styles from './demo.modules.scss'
 import Banner from '../../components/banner'
 import PhysicsPhone from '../../components/draggable-phone'
 import Matter from 'matter-js'
