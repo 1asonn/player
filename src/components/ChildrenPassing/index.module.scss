@@ -1,0 +1,280 @@
+.demo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    font-size: 28px;
+  }
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  h2 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+}
+
+.description {
+  background: #e7f3ff;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  margin-bottom: 20px;
+  
+  p {
+    margin: 0;
+    color: #0056b3;
+    font-size: 16px;
+  }
+}
+
+.example {
+  margin: 24px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  
+  h4 {
+    margin: 0 0 16px 0;
+    color: #495057;
+    font-size: 18px;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+  }
+}
+
+.childComponent {
+  background: white;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  
+  h3 {
+    margin: 0 0 12px 0;
+    color: #495057;
+    font-size: 16px;
+    padding: 8px 12px;
+    background: #e9ecef;
+    border-radius: 4px;
+  }
+}
+
+.content {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+  
+  p, div, span {
+    margin: 8px 0;
+    line-height: 1.5;
+  }
+  
+  button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 4px 8px 4px 0;
+    
+    &:hover {
+      background: #0056b3;
+    }
+  }
+  
+  ul {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  
+  h5 {
+    margin: 12px 0 8px 0;
+    color: #495057;
+  }
+}
+
+.fruit {
+  padding: 4px 8px;
+  margin: 4px 0;
+  background: #fff3cd;
+  border-radius: 4px;
+  border-left: 3px solid #ffc107;
+}
+
+.dataProvider {
+  background: #d4edda;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+}
+
+// 对比分析样式
+.comparison {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+  
+  h2 {
+    margin: 0 0 24px 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+}
+
+.comparisonGrid {
+  display: grid;
+  gap: 24px;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.comparisonItem {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  
+  h3 {
+    margin: 0 0 16px 0;
+    color: white;
+    font-size: 20px;
+  }
+  
+  h4 {
+    margin: 16px 0 8px 0;
+    color: white;
+    font-size: 16px;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 20px;
+    
+    li {
+      margin: 6px 0;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.4;
+    }
+  }
+}
+
+.code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+  
+  pre {
+    margin: 0;
+    color: #f8f9fa;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+// 最佳实践样式
+.bestPractices {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+  
+  h2 {
+    margin: 0 0 24px 0;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.practiceGrid {
+  display: grid;
+  gap: 24px;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.practice {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  
+  h3 {
+    margin: 0 0 16px 0;
+    color: white;
+    font-size: 18px;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 20px;
+    
+    li {
+      margin: 8px 0;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .demo {
+    padding: 16px;
+    
+    h1 {
+      font-size: 24px;
+      padding: 16px;
+    }
+  }
+  
+  .section {
+    padding: 16px;
+    
+    h2 {
+      font-size: 20px;
+    }
+  }
+  
+  .example {
+    padding: 16px;
+    
+    h4 {
+      font-size: 16px;
+    }
+  }
+}

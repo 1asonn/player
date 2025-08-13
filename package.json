@@ -16,6 +16,7 @@
     "boxicons": "^2.1.4",
     "gsap": "^3.13.0",
     "matter-js": "^0.20.0",
+    "qiankun": "^2.10.16",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^6.30.1",

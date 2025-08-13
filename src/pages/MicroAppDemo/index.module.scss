@@ -1,0 +1,192 @@
+.microAppDemo {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  
+  h1 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #666;
+    font-size: 16px;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #7494ec;
+  }
+  
+  &.active {
+    color: #7494ec;
+    border-bottom-color: #7494ec;
+  }
+}
+
+.content {
+  min-height: 400px;
+}
+
+.demoSection {
+  h3 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+}
+
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.appCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fff;
+  
+  h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: #666;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.loadButton {
+  padding: 10px 20px;
+  background: #7494ec;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  
+  &:hover:not(:disabled) {
+    background: #5a7bd8;
+  }
+  
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.appContainer {
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f9f9f9;
+  min-height: 200px;
+  
+  p {
+    color: #999;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.info {
+  margin-top: 40px;
+  padding: 30px;
+  background: #f8f9ff;
+  border-radius: 8px;
+  border-left: 4px solid #7494ec;
+  
+  h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      padding: 8px 0;
+      font-size: 15px;
+      color: #555;
+      
+      strong {
+        color: #7494ec;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .microAppDemo {
+    padding: 15px;
+  }
+  
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .appGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .controls {
+    justify-content: center;
+  }
+  
+  .containers {
+    grid-template-columns: 1fr;
+  }
+}
