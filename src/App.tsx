@@ -11,6 +11,7 @@ import Portal from './pages/portal';
 import MatterDemo from './pages/matter/demo';
 import Navigation from './components/Navigation';
 import MicroAppDemo from './pages/MicroAppDemo';
+import LoginQRCode from './components/LoginQRCode';
 // import ThemeManager from './components/ThemeManager';
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
           <Route path="/portal" element={<Portal />} />
           <Route path="/matter-demo" element={<MatterDemo />} />
           <Route path="/micro-app-demo" element={<MicroAppDemo />} />
-
+          <Route path="/login-qr-code" element={<LoginQRCode />} />
 
           
           {/* 404页面 - 可选 */}

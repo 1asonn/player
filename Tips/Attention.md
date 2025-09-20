@@ -45,4 +45,13 @@
    原因：不同分支修改到了同个页面
    合并方法：1）搭建平台查看冲突，接受与同事沟通后的修改，复制该json文件内容 ---> 2）在本地低码仓库拉取目标分支，发起merge，此时将json文件内容进行全量替换以解决冲突，最后进行push ---> 3）在对应环境检查更改内容是否生效
 
-7、
+7、react-native 滚动列表组件 -FlatList、SwipeListView的removeClippedSubviews属性
+   作用：可以指示React Native组件是否应该将超出屏幕外的视图从渲染树中删除。如果设置为true，则只有屏幕内部可见的视图才会在渲染树中保留，当 FlatList、 SwipeListView组件滚动时，removeClippedSubviews 属性会将滚出屏幕外的列表项移除，这样就可以减少渲染开销，可以有效地减少不在屏幕上可见的列表项所占用的内存，从而提高渲染性能，减少内存消耗。
+   开发中可能遇见的坑：
+   1）收银台项目中的购物车情景：
+      向购物车中添加较多数量的商品项目时，由于手动修改商品数量的需要，每个商品项会加入一个输入框用来更改当前商品数量，此时进行点击输入框唤起输入框会影响页面高度，影响布局，若FlatList或SwipeListView开启了removeClippedSubviews属性则会触发它们的优化行为，进而发生重新渲染导致输入框失焦，造成输入框弹起后迅速收回的bug
+
+   解决方案：
+   1）实际情景中购物车中的商品项目有限，removeClippedSubviews开启与否的内存消耗无显著差异，可直接将removeClippedSubviews属性设置为false；
+
+   2）
